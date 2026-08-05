@@ -1,33 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa">
 <head>
 <meta charset="UTF-8">
 <title>پرده بلوچی</title>
 
 <style>
-body {
-  font-family: Arial;
-  direction: rtl;
-  text-align: center;
-  padding: 20px;
+body{
+font-family:tahoma;
+direction:rtl;
+text-align:center;
+padding:30px;
 }
 
-input, select, button {
-  padding: 10px;
-  margin: 8px;
-  width: 80%;
+select,input,button{
+padding:12px;
+margin:10px;
+width:80%;
+font-size:16px;
 }
 
-button {
-  background: black;
-  color: white;
-  border: none;
-  cursor: pointer;
+button{
+background:#222;
+color:white;
+border:0;
 }
 
-#result {
-  margin-top: 20px;
-  font-size: 20px;
+#result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
 }
 </style>
 
@@ -37,40 +38,41 @@ button {
 
 <h1>پرده بلوچی</h1>
 
-<p>ماشین حساب قیمت دوخت پرده</p>
+<h3>ماشین حساب قیمت دوخت پرده</h3>
 
-<select id="type">
-<option value="100">ساده</option>
-<option value="120">پلیسه</option>
-<option value="140">مینیمال</option>
-<option value="150">پانچ</option>
+<select id="model">
+<option value="100">پرده ساده</option>
+<option value="120">پرده پلیسه</option>
+<option value="140">پرده مینیمال</option>
+<option value="150">پرده پانچ</option>
 </select>
 
 <br>
 
-<input id="meter" type="number" placeholder="متراژ پرده (متر)">
+<input id="meter" type="number" placeholder="متراژ پرده">
 
 <br>
 
-<button onclick="calc()">محاسبه قیمت</button>
+<button onclick="calculate()">محاسبه</button>
 
 <div id="result"></div>
 
 
 <script>
-function calc(){
 
-let type = document.getElementById("type").value;
-let meter = document.getElementById("meter").value;
+function calculate(){
 
-let price = type * meter;
+let price=document.getElementById("model").value;
+let meter=document.getElementById("meter").value;
 
-document.getElementById("result").innerHTML =
-"هزینه دوخت: " + price.toLocaleString() + " تومان";
+let total=price*meter*1000;
+
+document.getElementById("result").innerHTML=
+"هزینه دوخت: "+total.toLocaleString()+" تومان";
 
 }
-</script>
 
+</script>
 
 </body>
 </html>
