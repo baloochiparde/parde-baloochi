@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>پرده بلوچی</title>
+
+<style>
+body {
+  font-family: Arial;
+  direction: rtl;
+  text-align: center;
+  padding: 20px;
+}
+
+input, select, button {
+  padding: 10px;
+  margin: 8px;
+  width: 80%;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+}
+</style>
+
 </head>
 
 <body>
+
 <h1>پرده بلوچی</h1>
-<p>طراحی و دوخت انواع پرده</p>
+
+<p>ماشین حساب قیمت دوخت پرده</p>
+
+<select id="type">
+<option value="100">ساده</option>
+<option value="120">پلیسه</option>
+<option value="140">مینیمال</option>
+<option value="150">پانچ</option>
+</select>
+
+<br>
+
+<input id="meter" type="number" placeholder="متراژ پرده (متر)">
+
+<br>
+
+<button onclick="calc()">محاسبه قیمت</button>
+
+<div id="result"></div>
+
+
+<script>
+function calc(){
+
+let type = document.getElementById("type").value;
+let meter = document.getElementById("meter").value;
+
+let price = type * meter;
+
+document.getElementById("result").innerHTML =
+"هزینه دوخت: " + price.toLocaleString() + " تومان";
+
+}
+</script>
+
 
 </body>
 </html>
